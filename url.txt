@@ -1,1 +1,1 @@
-itms-services://?action=download-manifest&url=
+itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/oofmaster69420/h3lix-ota-install/main/h3lix.plist
