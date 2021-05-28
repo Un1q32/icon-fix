@@ -9,6 +9,6 @@ echo Removing original iOS 6 icon...
 rm /Applications/iFile.app/Icon.png > /dev/null
 
 echo Downloading HD iFile icon...
-curl -s https://i.imgur.com/ZFhor.png > /Applications/iFile.app/Icon.png
+curl -s -k https://i.imgur.com/ZFhor.png > /Applications/iFile.app/Icon.png
 
 echo Done.
