@@ -4,6 +4,14 @@
 
 echo Removing old icons...
 rm /Applications/iFile.app/AppIcon* > /dev/null
+
+if ! command -v curl &> /dev/null
+then
+    echo "cURL could not be found."
+    echo "Please install cURL from Cydia."
+    exit
+fi
+
 rm /Applications/iFile.app/Icon.png > /dev/null
 
 echo Downloading HD iFile icon...
