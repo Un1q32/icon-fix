@@ -2,9 +2,6 @@
 # Retina iFile icon made by meesebyte on Deviantart
 # iFile made by Carsten Heinelt
 
-echo Removing old icons...
-rm /Applications/iFile.app/AppIcon* > /dev/null
-
 if ! command -v curl &> /dev/null
 then
     echo "cURL could not be found."
@@ -12,6 +9,8 @@ then
     exit
 fi
 
+echo Removing old icons...
+rm /Applications/iFile.app/AppIcon* > /dev/null
 rm /Applications/iFile.app/Icon.png > /dev/null
 
 echo Downloading HD iFile icon...
