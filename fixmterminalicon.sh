@@ -1,6 +1,11 @@
 # Script made by Joey Reinhart
 # MTerminal made by lordscotland
 
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root." 
+   exit
+fi
+
 if ! command -v curl &> /dev/null
 then
     echo "cURL could not be found."
