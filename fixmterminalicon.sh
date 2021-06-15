@@ -1,3 +1,4 @@
+#!/bin/bash
 # Script made by Joey Reinhart
 # MTerminal made by lordscotland
 
