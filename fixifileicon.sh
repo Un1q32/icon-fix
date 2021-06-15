@@ -1,3 +1,4 @@
+#!/bin/bash
 # Script made by Joey Reinhart
 # Retina iFile icon made by meesebyte on Deviantart
 # iFile made by Carsten Heinelt
