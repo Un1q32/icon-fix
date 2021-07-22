@@ -16,8 +16,8 @@ then
 fi
 
 echo Removing old icons...
-rm /Applications/iFile.app/AppIcon* > /dev/null
-rm /Applications/iFile.app/Icon.png > /dev/null
+rm /Applications/iFile.app/AppIcon*
+rm /Applications/iFile.app/Icon.png
 
 echo Downloading HD iFile icon...
 curl -s -k https://i.imgur.com/ZFhor.png > /Applications/iFile.app/Icon.png
