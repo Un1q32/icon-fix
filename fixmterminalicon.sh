@@ -15,7 +15,7 @@ then
 fi
 
 echo Removing old icons...
-rm /Applications/MTerminal.app/icon* > /dev/null
+rm /Applications/MTerminal.app/icon*
 
 echo Downloading Legacy MTerminal icon...
 curl -s -k http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png > /Applications/MTerminal.app/icon-76.png
