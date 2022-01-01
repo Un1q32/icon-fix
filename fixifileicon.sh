@@ -20,6 +20,6 @@ rm /Applications/iFile.app/AppIcon*
 rm /Applications/iFile.app/Icon.png
 
 echo Downloading HD iFile icon...
-curl -s -k https://i.imgur.com/ZFhor.png > /Applications/iFile.app/Icon.png
+curl -s -k https://i.imgur.com/ZFhor.png -o /Applications/iFile.app/Icon.png
 
 echo Done.
