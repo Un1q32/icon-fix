@@ -18,6 +18,6 @@ printf "Removing old icons...\n"
 rm /Applications/MTerminal.app/icon*
 
 printf "Downloading Legacy MTerminal icon...\n"
-curl -s -k http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png -o /Applications/MTerminal.app/icon-76.png
+curl -s -k -o /Applications/MTerminal.app/icon-76.png http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png
 
 printf "Done.\n"
