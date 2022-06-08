@@ -6,14 +6,14 @@
 
 if [[ $EUID -ne 0 ]]; then
    printf "This script must be run as root.\n" 
-   return 0
+   exit 1
 fi
 
 if ! command -v curl &> /dev/null
 then
     printf "cURL could not be found.\n"
     printf "Please install cURL from Cydia.\n"
-    return 0
+    exit 1
 fi
 
 if [ -d /Applications/iFile.app ]; then
