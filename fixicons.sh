@@ -25,7 +25,7 @@ else
 	printf "iFile not found."
 fi
 
-if [ -d /Applications/iFile.app ]; then
+if [ -d /Applications/MTerminal.app ]; then
 	printf "Removing old MTerminal icon...\n"
 	rm /Applications/MTerminal.app/icon*
 	printf "Downloading new icon...\n"
