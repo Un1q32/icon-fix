@@ -22,7 +22,7 @@ if [ -d /Applications/iFile.app ]; then
 	printf "Downloading new icon...\n"
 	curl -s -k -o /Applications/iFile.app/Icon.png https://i.imgur.com/ZFhor.png
 else
-	printf "iFile not found."
+	printf "iFile not found.\n"
 fi
 
 if [ -d /Applications/MTerminal.app ]; then
@@ -31,7 +31,7 @@ if [ -d /Applications/MTerminal.app ]; then
 	printf "Downloading new icon...\n"
 	curl -s -k -o /Applications/MTerminal.app/icon-76.png http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png
 else
-	printf "MTerminal not found."
+	printf "MTerminal not found.\n"
 fi
 
 printf "Done.\n"
