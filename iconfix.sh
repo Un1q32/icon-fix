@@ -4,13 +4,12 @@
 # iFile made by Carsten Heinelt
 # MTerminal made by lordscotland
 
-if [[ $EUID -ne 0 ]]; then
+if [ "$(id -u)" -ne 0 ]; then
    printf "This script must be run as root.\n" 
    exit 1
 fi
 
-if ! command -v curl &> /dev/null
-then
+if [ -f /usr/bin/curl ]; then
     printf "cURL could not be found.\n"
     printf "Please install cURL from Cydia.\n"
     exit 1
