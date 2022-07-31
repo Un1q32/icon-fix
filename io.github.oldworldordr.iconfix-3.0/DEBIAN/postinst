@@ -9,7 +9,7 @@ if [ "$(id -u)" -ne 0 ]; then
    exit 1
 fi
 
-if [ -f /usr/bin/curl ]; then
+if ! command -v curl; then
     printf "cURL could not be found.\n"
     printf "Please install cURL from Cydia.\n"
     exit 1
