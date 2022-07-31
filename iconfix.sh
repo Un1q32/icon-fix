@@ -50,7 +50,7 @@ Usage:
         --ifile                 Fix only iFile icon
         --mterminal             Fix only MTerminal icon
 EOF
-        return 0
+        exit 0
     ;;
 
     -v|--version)
