@@ -55,17 +55,17 @@ EOF
 
     -v|--version)
         printf "${0##*/} 4.0\n"
-        return 0
+        exit 0
     ;;
 
     --ifile)
         fixifile
-        return 0
+        exit 0
     ;;
 
     --mterminal)
         fixmterminal
-        return 0
+        exit 0
     ;;
 esac
 
