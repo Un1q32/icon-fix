@@ -4,18 +4,26 @@
 # iFile made by Carsten Heinelt
 # MTerminal made by lordscotland
 
-if [ "$(id -u)" -ne 0 ]; then
-    printf "This script must be run as root.\n" 
-    exit 1
-fi
+rootcheck() {
+    if [ "$(id -u)" -ne 0 ]; then
+        printf "Must be root.\n" 
+        exit 1
+    fi
+}
 
-if ! command -v curl > /dev/null; then
-    printf "cURL could not be found.\n"
-    printf "Please install cURL from Cydia.\n"
-    exit 1
-fi
+curlcheck() {
+    if ! command -v curl > /dev/null; then
+        cat <<EOF
+cURL could not be found.
+Please install cURL from Cydia.
+EOF
+        exit 1
+    fi
+}
 
 fixifile() {
+    rootcheck
+    curlcheck
     if [ -d /Applications/iFile.app ]; then
         printf "Removing old iFile icon...\n"
         rm -f /Applications/iFile.app/AppIcon*
@@ -27,6 +35,8 @@ fixifile() {
 }
 
 fixmterminal() {
+    rootcheck
+    curlcheck
     if [ -d /Applications/MTerminal.app ]; then
         printf "Removing old MTerminal icon...\n"
         rm -f /Applications/MTerminal.app/icon*
