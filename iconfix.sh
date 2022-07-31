@@ -54,7 +54,7 @@ EOF
     ;;
 
     -v|--version)
-        printf "${0##*/} 4.0\n"
+        printf "IconFix 4.0\n"
         exit 0
     ;;
 
