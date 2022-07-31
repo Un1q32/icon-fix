@@ -70,11 +70,13 @@ EOF
 
     --ifile)
         fixifile
+        printf "Done.\n"
         exit 0
     ;;
 
     --mterminal)
         fixmterminal
+        printf "Done.\n"
         exit 0
     ;;
 esac
