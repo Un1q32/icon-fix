@@ -40,7 +40,7 @@ fixmterminal() {
 case $* in
     -h|--help)
         cat <<EOF
-${0##*/} - Fix the broken iFile and MTerminal icons on iOS 6 and below.
+IconFix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
 Usage:
     ${0##*/} [OPTION]
