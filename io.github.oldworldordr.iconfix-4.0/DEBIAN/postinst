@@ -4,18 +4,26 @@
 # iFile made by Carsten Heinelt
 # MTerminal made by lordscotland
 
-if [ "$(id -u)" -ne 0 ]; then
-    printf "This script must be run as root.\n" 
-    exit 1
-fi
+rootcheck() {
+    if [ "$(id -u)" -ne 0 ]; then
+        printf "Must be root.\n" 
+        exit 1
+    fi
+}
 
-if ! command -v curl; then
-    printf "cURL could not be found.\n"
-    printf "Please install cURL from Cydia.\n"
-    exit 1
-fi
+curlcheck() {
+    if ! command -v curl > /dev/null; then
+        cat <<EOF
+cURL could not be found.
+Please install cURL from Cydia.
+EOF
+        exit 1
+    fi
+}
 
 fixifile() {
+    rootcheck
+    curlcheck
     if [ -d /Applications/iFile.app ]; then
         printf "Removing old iFile icon...\n"
         rm -f /Applications/iFile.app/AppIcon*
@@ -27,6 +35,8 @@ fixifile() {
 }
 
 fixmterminal() {
+    rootcheck
+    curlcheck
     if [ -d /Applications/MTerminal.app ]; then
         printf "Removing old MTerminal icon...\n"
         rm -f /Applications/MTerminal.app/icon*
@@ -40,7 +50,7 @@ fixmterminal() {
 case $* in
     -h|--help)
         cat <<EOF
-${0##*/} - Fix the broken iFile and MTerminal icons on iOS 6 and below.
+iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
 Usage:
     ${0##*/} [OPTION]
@@ -50,22 +60,24 @@ Usage:
         --ifile                 Fix only iFile icon
         --mterminal             Fix only MTerminal icon
 EOF
-        return 0
+        exit 0
     ;;
 
     -v|--version)
-        printf "${0##*/} 4.0\n"
-        return 0
+        printf "iconfix 4.0\n"
+        exit 0
     ;;
 
     --ifile)
         fixifile
-        return 0
+        printf "Done.\n"
+        exit 0
     ;;
 
     --mterminal)
         fixmterminal
-        return 0
+        printf "Done.\n"
+        exit 0
     ;;
 esac
 
