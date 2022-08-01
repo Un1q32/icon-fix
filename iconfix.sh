@@ -64,7 +64,7 @@ EOF
     ;;
 
     -v|--version)
-        printf "iconfix 4.1\n"
+        printf "iconfix 4.0\n"
         exit 0
     ;;
 
