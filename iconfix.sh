@@ -55,10 +55,10 @@ iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 Usage:
     ${0##*/} [OPTION]
 
-    -h, --help                  Print this message
-    -v, --version               Display version info
-        --ifile                 Fix only iFile icon
-        --mterminal             Fix only MTerminal icon
+    -h, --help              Print this message
+    -v, --version           Display version info
+        --ifile             Fix only iFile icon
+        --mterminal         Fix only MTerminal icon
 EOF
         exit 0
     ;;
