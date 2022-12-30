@@ -1,8 +1,6 @@
 #!/bin/sh
 # Script made by OldWorldOrder
 # Retina iFile icon made by meesebyte on Deviantart
-# iFile made by Carsten Heinelt
-# MTerminal made by lordscotland
 
 rootcheck() {
     if [ "$(id -u)" -ne 0 ]; then
@@ -13,10 +11,7 @@ rootcheck() {
 
 curlcheck() {
     if ! command -v curl > /dev/null; then
-        cat <<EOF
-cURL could not be found.
-Please install cURL from Cydia.
-EOF
+        printf "curl could not be found."
         exit 1
     fi
 }
@@ -49,11 +44,10 @@ fixmterminal() {
 
 case $* in
     -h|--help)
-        cat <<EOF
+        cat << EOF
 iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
-Usage:
-    ${0##*/} [OPTION]
+Usage: iconfix [OPTION]
 
     -h, --help              Print this message
     -v, --version           Display version info
@@ -64,7 +58,7 @@ EOF
     ;;
 
     -v|--version)
-        printf "iconfix 4.0\n"
+        printf "iconfix 5.1\n"
         exit 0
     ;;
 
