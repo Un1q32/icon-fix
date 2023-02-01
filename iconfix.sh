@@ -44,16 +44,14 @@ fixmterminal() {
 
 case $* in
     -h|--help)
-        cat << EOF
-iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
+        printf "iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
 Usage: iconfix [OPTION]
 
     -h, --help              Print this message
     -v, --version           Display version info
         --ifile             Fix only iFile icon
-        --mterminal         Fix only MTerminal icon
-EOF
+        --mterminal         Fix only MTerminal icon\n"
         exit 0
     ;;
 
