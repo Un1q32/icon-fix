@@ -56,7 +56,7 @@ Usage: iconfix [OPTION]
     ;;
 
     -v|--version)
-        printf "iconfix 5.1\n"
+        printf "iconfix 5.2\n"
         exit 0
     ;;
 
