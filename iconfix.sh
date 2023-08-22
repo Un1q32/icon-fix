@@ -23,7 +23,7 @@ fixifile() {
         printf "Removing old iFile icon...\n"
         rm -f /Applications/iFile.app/AppIcon*
         printf "Downloading new icon...\n"
-        curl -s -o /Applications/iFile.app/Icon.png https://i.imgur.com/ZFhor.png
+        curl -s -o /Applications/iFile.app/Icon.png https://i.imgur.com/ZFhor.png -k
     else
         printf "iFile not found - Skipping...\n"
     fi
@@ -36,7 +36,7 @@ fixmterminal() {
         printf "Removing old MTerminal icon...\n"
         rm -f /Applications/MTerminal.app/icon*
         printf "Downloading new icon...\n"
-        curl -s -o /Applications/MTerminal.app/icon-76.png https://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png
+        curl -s -o /Applications/MTerminal.app/icon-76.png http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png
     else
         printf "MTerminal not found - Skipping...\n"
     fi
