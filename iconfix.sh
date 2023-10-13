@@ -13,7 +13,6 @@ rootcheck() {
 
 fixifile() {
     rootcheck
-    curlcheck
     if [ -d /Applications/iFile.app ]; then
         printf "Removing old iFile icon...\n"
         rm -f /Applications/iFile.app/AppIcon*
