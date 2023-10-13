@@ -1,17 +1,12 @@
 #!/bin/sh
 # Script made by OldWorldOrder
-# Retina iFile icon made by meesebyte on Deviantart
+#
+# This script is licensed under the GNU GPLv3
+# You can find the license here: http://www.gnu.org/licenses/gpl-3.0.html
 
 rootcheck() {
-    if [ "$(id -u)" -ne 0 ]; then
+    if [ "$(id -u)" != 0 ]; then
         printf "This script must be run as root!\n"
-        exit 1
-    fi
-}
-
-curlcheck() {
-    if ! command -v curl > /dev/null; then
-        printf "curl could not be found."
         exit 1
     fi
 }
@@ -22,8 +17,8 @@ fixifile() {
     if [ -d /Applications/iFile.app ]; then
         printf "Removing old iFile icon...\n"
         rm -f /Applications/iFile.app/AppIcon*
-        printf "Downloading new icon...\n"
-        curl -s -o /Applications/iFile.app/Icon.png https://i.imgur.com/ZFhor.png -k
+        printf "Adding new icon...\n"
+        cp /usr/share/iconfix/ifile.png /Applications/iFile.app/Icon.png
     else
         printf "iFile not found - Skipping...\n"
     fi
@@ -31,42 +26,43 @@ fixifile() {
 
 fixmterminal() {
     rootcheck
-    curlcheck
     if [ -d /Applications/MTerminal.app ]; then
         printf "Removing old MTerminal icon...\n"
         rm -f /Applications/MTerminal.app/icon*
-        printf "Downloading new icon...\n"
-        curl -s -o /Applications/MTerminal.app/icon-76.png http://cydia.saurik.com/icon@2x/com.officialscheduler.mterminal.png
+        printf "Adding new icon...\n"
+        cp /usr/share/iconfix/mterminal.png /Applications/MTerminal.app/icon-76.png
     else
         printf "MTerminal not found - Skipping...\n"
     fi
 }
 
-case $* in
-    -h|--help)
-        printf "iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
+case "$1" in
+    *help)
+        printf '%s' "\
+iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
 Usage: iconfix [OPTION]
 
-    -h, --help              Print this message
-    -v, --version           Display version info
-        --ifile             Fix only iFile icon
-        --mterminal         Fix only MTerminal icon\n"
+  ifile		Fix only iFile icon
+  mterminal	Fix only MTerminal icon
+  help		Print this message
+  version	Display version info
+"
         exit 0
     ;;
 
-    -v|--version)
-        printf "iconfix 5.2\n"
+    *version)
+        printf "iconfix 6.0\n"
         exit 0
     ;;
 
-    --ifile)
+    ifile)
         fixifile
         printf "Done.\n"
         exit 0
     ;;
 
-    --mterminal)
+    mterminal)
         fixmterminal
         printf "Done.\n"
         exit 0
