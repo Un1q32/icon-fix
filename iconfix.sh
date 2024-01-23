@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 # Script made by OldWorldOrder
 #
 # This script is licensed under the GNU GPLv3
 # You can find the license here: http://www.gnu.org/licenses/gpl-3.0.html
 
 rootcheck() {
-    if [ "$(id -u)" != 0 ]; then
+    if [ "$EUID" != "0" ]; then
         printf "This script must be run as root!\n"
         exit 1
     fi
