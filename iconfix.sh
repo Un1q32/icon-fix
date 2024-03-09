@@ -36,7 +36,7 @@ fixmterminal() {
 }
 
 case "$1" in
-    *h)
+    --help|-h|-?|help)
         printf '%s' "\
 iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
