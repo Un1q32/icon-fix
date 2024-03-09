@@ -39,6 +39,7 @@ if [ -z "$1" ]; then
     fixifile
     fixmterminal
     printf "Done.\n"
+    exit 0
 fi
 
 case "$1" in
