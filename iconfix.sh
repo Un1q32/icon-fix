@@ -35,19 +35,13 @@ fixmterminal() {
     fi
 }
 
+if [ -z "$1" ]; then
+    fixifile
+    fixmterminal
+    printf "Done.\n"
+fi
+
 case "$1" in
-    --help|-h|-?|help)
-        printf '%s' "\
-iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
-
-Usage: iconfix [OPTION]
-
-  ifile		Fix only iFile icon
-  mterminal	Fix only MTerminal icon
-"
-        exit 0
-    ;;
-
     ifile)
         fixifile
         printf "Done.\n"
@@ -59,8 +53,14 @@ Usage: iconfix [OPTION]
         printf "Done.\n"
         exit 0
     ;;
-esac
 
-fixifile
-fixmterminal
-printf "Done.\n"
+    *)
+        printf '%s' "\
+Usage: ${0##*/} [OPTION]
+
+  ifile		Fix only iFile icon
+  mterminal	Fix only MTerminal icon
+"
+        exit 1
+    ;;
+esac
