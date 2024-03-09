@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script made by OldWorldOrder
-#
+# Script made by Un1q32
+
 # This script is licensed under the GNU GPLv3
 # You can find the license here: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,7 +36,7 @@ fixmterminal() {
 }
 
 case "$1" in
-    *help)
+    *h)
         printf '%s' "\
 iconfix - Fix the broken iFile and MTerminal icons on iOS 6 and below.
 
@@ -44,14 +44,7 @@ Usage: iconfix [OPTION]
 
   ifile		Fix only iFile icon
   mterminal	Fix only MTerminal icon
-  help		Print this message
-  version	Display version info
 "
-        exit 0
-    ;;
-
-    *version)
-        printf "iconfix 6.0\n"
         exit 0
     ;;
 
